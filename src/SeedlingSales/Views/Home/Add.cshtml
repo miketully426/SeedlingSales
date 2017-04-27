@@ -1,18 +1,19 @@
-﻿
-<form method="post">
+﻿@model SeedlingSales.ViewModels.AddViewModel
+
+<form asp-controller="Home" asp-action="Add" method="post">
     <h1>Add New Plant</h1>
     <table>
         <tr>
-            <td><label>Plant:</label></td>
-            <td><input type="text" name="Name" /></td>
+            <td><label asp-for="Name"></label></td>
+            <td><input asp-for="Name" class="form-control" /></td>
         </tr>
         <tr>
-            <td><label>Number seeded:</label></td>
-            <td><input type="text" name="Seeded" /></td>
+            <td><label asp-for="Seeded"></label></td>
+            <td><input asp-for="Seeded" class="form-control" /></td>
         </tr>
         <tr>
-            <td><label>Price:</label></td>
-            <td><input type="text" name="Price" /></td>
+            <td><label asp-for="Price"></label></td>
+            <td><input asp-for="Price" class="form-control" /></td>
         </tr>
         
     </table>
