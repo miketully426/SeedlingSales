@@ -1,6 +1,22 @@
-﻿
+﻿@model SeedlingSales.ViewModels.IndexViewModel
 
 <h1>Current Stock</h1>
+@if (Model.Plants.Count == 0)
+{
+    <p>No Plants Yet</p>
+}
+<table>
+@foreach(var plant in Model.Plants)
+    {
+        <tr>
+            <td>@plant.Name</td>
+            <td>@plant.Seeded</td>
+            <td>@plant.Ready</td>
+            <td>@plant.Price</td>
+        </tr>
+
+    }
+    </table>
 
 
 

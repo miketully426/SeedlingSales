@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using SeedlingSales.Models;
 using SeedlingSales.ViewModels;
 using SeedlingSales.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace SeedlingSales.Controllers
 {
@@ -22,9 +23,10 @@ namespace SeedlingSales.Controllers
 
         public IActionResult Index()
         {
+            IndexViewModel homeViewModel = new IndexViewModel();
+            homeViewModel.Plants = context.Plants.ToList();
             
-            
-            return View();
+            return View(homeViewModel);
         }
 
         public IActionResult Add()
