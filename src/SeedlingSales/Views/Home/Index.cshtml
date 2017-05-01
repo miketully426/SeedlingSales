@@ -8,14 +8,21 @@
 <table>
 @foreach(var plant in Model.Plants)
     {
+        @if (plant.Ready > 0 || plant.Seeded > 0)
+        {
         <tr>
             <td>@plant.Name</td>
             <td>@plant.Seeded</td>
             <td>@plant.Ready</td>
             <td>@plant.Price</td>
+            <td><form asp-action="Remove" method="post">
+                <input type="hidden" name="plantid" value="@plant.PlantID" />
+                <input type="submit" value="remove" />
+                </form></td>
         </tr>
+            }
 
-    }
+        }
     </table>
 
 

@@ -54,6 +54,13 @@ namespace SeedlingSales.Controllers
             return Redirect("/");
         }
 
+        [HttpPost]
+        public IActionResult Remove(int plantid)
+        {
+            Plant thePlant = context.Plants.Single(p => p.PlantID == plantid);
+            return View(thePlant);
+        }
+
 
         public IActionResult Error()
         {
