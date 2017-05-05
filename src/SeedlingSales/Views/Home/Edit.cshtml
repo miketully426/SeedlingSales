@@ -1,0 +1,32 @@
+﻿@model SeedlingSales.ViewModels.EditViewModel
+
+<h1>Edit Current Plant</h1>
+
+<form asp-controller="Home" asp-action="EditPlant" method="post">
+
+    <table>
+        <tr>
+            <td><label asp-for="Name"></label></td>
+            <td><input asp-for="Name" value ="@Model.Plant.Name" class="form-control" /></td>
+            <td><i>Current: @Model.Plant.Name</i></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Seeded"></label></td>
+            <td><input asp-for="Seeded" value="@Model.Plant.Seeded" class="form-control" /></td>
+            <td><i>Current: @Model.Plant.Seeded</i></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Ready"></label></td>
+            <td><input asp-for="Ready" value="@Model.Plant.Ready" class="form-control" /></td>
+            <td><i>Current: @Model.Plant.Ready</i></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Price"></label></td>
+            <td><input asp-for="Price" value="@Model.Plant.Price" class="form-control" /></td>
+            <td><i>Current: @Model.Plant.Price</i></td>
+        </tr>
+
+    </table>
+    <input type="hidden" name="PlantID" value="@Model.Plant.PlantID" />
+    <input type="submit" value="Update" />
+</form>

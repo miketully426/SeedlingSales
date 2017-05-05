@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace SeedlingSales.ViewModels
 {
-    public class IndexViewModel:AddViewModel
+    public class EditViewModel:AddViewModel
     {
-        public IList<Plant> Plants { get; set; }
+        public Plant Plant { get; set; }
+        public int PlantID { get; set; }
 
     }
 }

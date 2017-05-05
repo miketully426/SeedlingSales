@@ -61,6 +61,32 @@ namespace SeedlingSales.Controllers
             return View(thePlant);
         }
 
+        [HttpPost]
+        public IActionResult Edit(int plantid)
+        {
+            Plant thePlant = context.Plants.Single(p => p.PlantID == plantid);
+            EditViewModel editViewModel = new EditViewModel
+            {
+                Plant = thePlant
+            };
+
+            return View(editViewModel);
+        }
+
+        [HttpPost]
+        public IActionResult EditPlant(EditViewModel editViewModel)
+        {
+            Plant toUpdate = context.Plants.Single(p => p.PlantID == editViewModel.PlantID);
+            toUpdate.Name = editViewModel.Name;
+            toUpdate.Seeded = editViewModel.Seeded;
+            toUpdate.Ready = editViewModel.Ready;
+            toUpdate.Price = editViewModel.Price;
+
+            context.SaveChanges();
+            return Redirect("/");
+
+        }
+
 
         public IActionResult Error()
         {

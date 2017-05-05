@@ -5,9 +5,16 @@
 {
     <p>No Plants Yet</p>
 }
-<table>
+<table class="table-bordered">
+    <tr>
+        <td><label asp-for="Name"></label></td>
+        <td><label asp-for="Seeded"></label></td>
+        <td><label asp-for="Ready"></label></td>
+        <td><label asp-for="Price"></label></td>
+    </tr>
 @foreach(var plant in Model.Plants)
     {
+
         @if (plant.Ready > 0 || plant.Seeded > 0)
         {
         <tr>
@@ -17,8 +24,13 @@
             <td>@plant.Price</td>
             <td><form asp-action="Remove" method="post">
                 <input type="hidden" name="plantid" value="@plant.PlantID" />
-                <input type="submit" value="remove" />
+                <input type="submit" value="Remove" />
                 </form></td>
+            <td><form asp-action="Edit" method="post">
+                    <input type="hidden" name="plantid" value="@plant.PlantID" />
+                    <input type="submit" value="Edit" />
+                </form>
+            </td>
         </tr>
             }
 
