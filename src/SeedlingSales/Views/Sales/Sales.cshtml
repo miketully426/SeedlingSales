@@ -1,0 +1,30 @@
+﻿@model SeedlingSales.ViewModels.SalesViewModel
+
+<h1>Sales</h1>
+
+<form method="post" asp-action="Confirm">
+    <table class="table-bordered"><tr>
+        <td><input type="hidden" name="Sold[0].TransactionID" value="5" />
+        <select name="Sold[0].SoldPlantName">
+            @foreach (var plant in Model.Plants)
+            {
+                <option value="@plant.PlantID">@plant.Name</option>
+            }
+        </select></td>
+        <td><label>Sold:</label>
+        <select name="Sold[0].NumberSold">
+           @for(int i = 0; i < 10; i++)
+           {
+               <option value="@i">@i</option>
+           }
+        </select>
+        </td>
+        <td>
+            <input type="text" name="Sold[0].Price" />
+        </td>
+        <td>
+            <input type="submit" value="Submit" />
+        </td>
+
+        </tr></table>
+</form>

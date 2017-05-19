@@ -1,0 +1,30 @@
+﻿@model SeedlingSales.ViewModels.SalesViewModel
+
+@if(Model.Sold.Count() == 0)
+{
+    <strong>Nothing selected to sell</strong>
+
+}
+else
+{
+    <form>
+        <table class="table-bordered">
+
+
+            @foreach (var sale in Model.Sold)
+            {
+                <tr>
+                    <td><label>@sale.SoldPlant.Name</label><input type="hidden" name="SoldPlant" value="@sale.SoldPlant.PlantID" /></td>
+                    <td><label>@sale.NumberSold</label><input type="hidden" name="NumberSold" value="@sale.NumberSold" /></td>
+                    <td><label>@sale.Price</label><input type="hidden" name="Price" value="@sale.Price" /></td>
+                </tr>
+
+            }
+            <tr>
+                <td><input type="submit" value="Confirm" /></td>
+                <td><a asp-action="Sales">Cancel</a></td>
+            </tr>
+            </table>
+        </form>
+            }
+
