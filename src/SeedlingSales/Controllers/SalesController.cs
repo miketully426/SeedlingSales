@@ -24,17 +24,16 @@ namespace SeedlingSales.Controllers
         public IActionResult Sales()
         {
             SalesViewModel salesViewModel = new SalesViewModel();
-            salesViewModel.Plants = context.Plants.ToList();
+            salesViewModel.Plants = Plant.CheckReady(context.Plants.ToList());
+            
             return View(salesViewModel);
         }
 
         public IActionResult Confirm(SalesViewModel salesViewModel)
         {
-            foreach(Sale sale in salesViewModel.Sold)
-            {
-                Plant temp = context.Plants.Single(p => p.PlantID == sale.SoldPlantID);
-                sale.SoldPlant = temp;
-            }
+            salesViewModel.Plants = context.Plants.ToList();
+            salesViewModel.Sold = Sale.ConvertPrice(salesViewModel.Sold);
+
             return View(salesViewModel);
         }
     }

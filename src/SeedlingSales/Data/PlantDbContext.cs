@@ -10,6 +10,7 @@ namespace SeedlingSales.Data
     public class PlantDbContext : DbContext
     {
         public DbSet<Plant> Plants { get; set; }
+        public DbSet<Sale> Sales { get; set; }
 
         public PlantDbContext(DbContextOptions<PlantDbContext> options) : base(options) { }
 

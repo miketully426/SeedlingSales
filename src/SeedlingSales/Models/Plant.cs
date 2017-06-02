@@ -13,5 +13,18 @@ namespace SeedlingSales.Models
         public int Ready { get; set; }
         public decimal Price { get; set; }
 
+
+        public static IList<Plant> CheckReady (IList<Plant> allPlants)
+        {
+            for (int i = allPlants.Count() - 1; i >= 0; i--)
+            {
+                if (allPlants[i].Ready < 1)
+                {
+                    allPlants.Remove(allPlants[i]);
+                }
+            }
+            return allPlants;
+        }
+
     }
 }

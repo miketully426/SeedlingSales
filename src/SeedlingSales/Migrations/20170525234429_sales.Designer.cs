@@ -8,9 +8,10 @@ using SeedlingSales.Data;
 namespace SeedlingSales.Migrations
 {
     [DbContext(typeof(PlantDbContext))]
-    partial class PlantDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170525234429_sales")]
+    partial class sales
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")

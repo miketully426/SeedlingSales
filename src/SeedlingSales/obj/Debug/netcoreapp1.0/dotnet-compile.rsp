@@ -214,6 +214,8 @@ C:\Users\Mike\Documents\GitHub\SeedlingSales\src\SeedlingSales\Controllers\Sales
 C:\Users\Mike\Documents\GitHub\SeedlingSales\src\SeedlingSales\Data\PlantDbContext.cs
 C:\Users\Mike\Documents\GitHub\SeedlingSales\src\SeedlingSales\Migrations\20170427225905_AddPlant.cs
 C:\Users\Mike\Documents\GitHub\SeedlingSales\src\SeedlingSales\Migrations\20170427225905_AddPlant.Designer.cs
+C:\Users\Mike\Documents\GitHub\SeedlingSales\src\SeedlingSales\Migrations\20170525234429_sales.cs
+C:\Users\Mike\Documents\GitHub\SeedlingSales\src\SeedlingSales\Migrations\20170525234429_sales.Designer.cs
 C:\Users\Mike\Documents\GitHub\SeedlingSales\src\SeedlingSales\Migrations\PlantDbContextModelSnapshot.cs
 C:\Users\Mike\Documents\GitHub\SeedlingSales\src\SeedlingSales\Models\Plant.cs
 C:\Users\Mike\Documents\GitHub\SeedlingSales\src\SeedlingSales\Models\Sale.cs

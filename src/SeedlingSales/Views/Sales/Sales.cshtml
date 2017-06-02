@@ -4,24 +4,33 @@
 
 <form method="post" asp-action="Confirm">
     <table class="table-bordered"><tr>
-        <td><input type="hidden" name="Sold[0].TransactionID" value="5" />
-        <select name="Sold[0].SoldPlantName">
-            @foreach (var plant in Model.Plants)
-            {
-                <option value="@plant.PlantID">@plant.Name</option>
-            }
+        
+        @foreach (var plant in Model.Plants)
+        {
+           
+        <tr>
+        <td><input type="hidden" name="Sold[@Model.Plants.IndexOf(plant)].TransactionID" value="@Model.Transaction" />
+        <select name="Sold[@Model.Plants.IndexOf(plant)].SoldPlantID">
+        <option value="@plant.PlantID">@plant.Name</option>
+                    }
+                }
         </select></td>
         <td><label>Sold:</label>
-        <select name="Sold[0].NumberSold">
-           @for(int i = 0; i < 10; i++)
+        <select name="Sold[@Model.Plants.IndexOf(plant)].NumberSold">
+           @for (int i = 0; i < @plant.Ready; i++)
            {
                <option value="@i">@i</option>
            }
         </select>
         </td>
         <td>
-            <input type="text" name="Sold[0].Price" />
+            <input type="text" value="@plant.Price" name="Sold[@Model.Plants.IndexOf(plant)].Price" />
         </td>
+        
+        
+        </tr>
+        }
+        <tr>
         <td>
             <input type="submit" value="Submit" />
         </td>

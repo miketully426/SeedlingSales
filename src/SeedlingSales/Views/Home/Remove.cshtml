@@ -6,8 +6,8 @@
 <table>
     <tr>
         <td>
-            <form method="post">
-                <input type="hidden" value="@Model.PlantID" name="plantid" />
+            <form method="post" asp-action="RemovePlant">
+                <input type="hidden" value="@Model.PlantID" name="removeplant" />
                 <input type="submit" value="Yes" />
             </form>
         </td>

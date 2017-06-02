@@ -13,11 +13,17 @@ else
 
             @foreach (var sale in Model.Sold)
             {
+
                 <tr>
-                    <td><label>@sale.SoldPlant.Name</label><input type="hidden" name="SoldPlant" value="@sale.SoldPlant.PlantID" /></td>
+                    @foreach (var plant in Model.Plants){
+                    @if (plant.PlantID.Equals(sale.SoldPlantID)){
+                    <td><label> @plant.Name </label ><input type = "hidden" name = "SoldPlant" value = "@plant.Name" /></td >
+                } }
+
                     <td><label>@sale.NumberSold</label><input type="hidden" name="NumberSold" value="@sale.NumberSold" /></td>
                     <td><label>@sale.Price</label><input type="hidden" name="Price" value="@sale.Price" /></td>
                 </tr>
+
 
             }
             <tr>

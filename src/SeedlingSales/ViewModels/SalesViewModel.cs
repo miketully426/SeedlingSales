@@ -10,6 +10,7 @@ namespace SeedlingSales.ViewModels
     {
         public IList<Plant> Plants { get; set; }
         public IList<Sale> Sold { get; set; }
+        public int Transaction { get; set; }
 
 
     }

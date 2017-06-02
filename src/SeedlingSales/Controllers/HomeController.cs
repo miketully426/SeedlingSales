@@ -62,6 +62,15 @@ namespace SeedlingSales.Controllers
         }
 
         [HttpPost]
+        public IActionResult RemovePlant (int removeplant)
+        {
+            Plant thePlant = context.Plants.Single(p => p.PlantID == removeplant);
+            context.Plants.Remove(thePlant);
+            context.SaveChanges();
+            return Redirect("/");
+        }
+
+        [HttpPost]
         public IActionResult Edit(int plantid)
         {
             Plant thePlant = context.Plants.Single(p => p.PlantID == plantid);
