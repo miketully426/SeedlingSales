@@ -25,6 +25,7 @@ namespace SeedlingSales.Controllers
         {
             SalesViewModel salesViewModel = new SalesViewModel();
             salesViewModel.Plants = Plant.CheckReady(context.Plants.ToList());
+            salesViewModel.SaleDate = DateTime.Now;
             
             return View(salesViewModel);
         }
@@ -32,7 +33,10 @@ namespace SeedlingSales.Controllers
         public IActionResult Confirm(SalesViewModel salesViewModel)
         {
             salesViewModel.Plants = context.Plants.ToList();
-            salesViewModel.Sold = Sale.ConvertPrice(salesViewModel.Sold);
+            salesViewModel.Sold = SaleService.ConvertPrice(salesViewModel.Sold);
+            salesViewModel.Total = SaleService.GetTotal(salesViewModel.Sold);
+            salesViewModel.SaleDate = DateTime.Parse(salesViewModel.SDate);
+
 
             return View(salesViewModel);
         }

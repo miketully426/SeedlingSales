@@ -3,7 +3,12 @@
 <h1>Sales</h1>
 
 <form method="post" asp-action="Confirm">
-    <table class="table-bordered"><tr>
+    <table class="table-bordered">
+        <tr>
+            <td><label>Sale date:</label> </td>
+            <td><input type="text" name="SDate" value="@Model.SaleDate.ToString("d")" /></td>
+        </tr>
+        
         
         @foreach (var plant in Model.Plants)
         {

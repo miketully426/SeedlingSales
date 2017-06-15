@@ -9,6 +9,7 @@ namespace SeedlingSales.Models
     {
         public int TransactionID { get; set; }
         public List<Sale> ItemsSold { get; set; }
+        public decimal Total { get; set; }
 
     }
 }

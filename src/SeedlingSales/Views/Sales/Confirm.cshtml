@@ -10,7 +10,8 @@ else
     <form>
         <table class="table-bordered">
 
-
+            <tr><td><label>Date:</label></td>
+            <td><label>@Model.SaleDate.ToString("d")</label></td></tr>
             @foreach (var sale in Model.Sold)
             {
 
@@ -26,6 +27,10 @@ else
 
 
             }
+            <tr>
+                <td><label>Total:</label></td>
+                <td><label>@Model.Total</label></td>
+            </tr>
             <tr>
                 <td><input type="submit" value="Confirm" /></td>
                 <td><a asp-action="Sales">Cancel</a></td>

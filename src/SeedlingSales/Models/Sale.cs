@@ -12,15 +12,9 @@ namespace SeedlingSales.Models
         public int SoldPlantID { get; set; }
         public int NumberSold { get; set; }
         public decimal Price { get; set; }
-        
+        public DateTime SaleDate { get; set; }
 
-        public static IList<Sale> ConvertPrice (IList<Sale> Sales)
-        {
-            foreach(Sale sale in Sales)
-            {
-                sale.Price = sale.Price * sale.NumberSold;
-            }
-            return Sales;
-        }
+
+
     }
 }
